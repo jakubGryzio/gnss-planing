@@ -41,7 +41,7 @@ def numberSatellite(SatelliteNumberToPlot):
         return [int(elem) if int(elem) < 11 else int(elem) - 1 for elem in SatelliteNumberToPlot.split(',')]
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['POST'])
 def main():
     global fi, lamb, h, mask, day, time, point, map, satellite
     if request.method == 'POST':
