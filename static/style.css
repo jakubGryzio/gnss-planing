@@ -1,0 +1,177 @@
+body
+{
+    background-color: #ffffff;
+    font-family: Verdana, sans-serif;
+}
+
+p
+{
+    color: #ffffff;
+}
+
+.container
+{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.8fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 5fr 5fr 2fr;
+    grid-template-areas:
+        "nav nav nav nav nav"
+        "sidebar main main main main"
+        "sidebar main main main main"
+        "sidebar main main main main"
+}
+.container_plot
+{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.8fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 5fr 5fr 2fr;
+    grid-template-areas:
+        "nav nav nav nav nav"
+        "sidebar main main main main"
+        "sidebar main main main main"
+        "sidebar main main main main"
+}
+
+.sat_info
+{
+    background-color: #eaeaee;
+    grid-area: sidebar;
+}
+
+.info
+{
+    background-color: #eaeaee;
+    grid-area: sidebar;
+    height: 1600px;
+}
+
+
+.main
+{
+    grid-area: main;
+}
+
+.chart
+{
+    left: 15%;
+    top: 60%;
+    position: absolute;
+    margin: 10px 0 0 0;
+    padding: 20px 0 20px 100px;
+    display: inline-block;
+}
+
+.chart2 {
+    left: 15%;
+    position: absolute;
+    margin: 10px 0 0 0;
+    padding: 20px 0 20px 100px;
+    display: inline-block;
+}
+
+.chart3 {
+    left: 15%;
+    top: 1100px;
+    position: absolute;
+    margin: 10px 0 0 0;
+    padding: 20px 0 20px 100px;
+    display: inline-block;
+}
+
+.skyPlot
+{
+    left: 40%;
+    top: 10%;
+    position: absolute;
+}
+
+.mapView
+{
+    left: 18%;
+    top: 20%;
+    position: absolute;
+}
+
+.position
+{
+    left: 36%;
+    border-style: groove;
+    width: 900px;
+    height: 420px;
+    position: absolute;
+    margin: 10px 0 0 0;
+    padding: 20px 0 20px 100px;
+    letter-spacing: 1px;
+    line-height: 3;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 15px;
+}
+
+.position label {
+  float:left;
+  width:15%;
+  text-align:right;
+  margin-right:5px;
+}
+
+input {
+  padding: 6px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #4070e5;
+  color: #ffffff;
+  padding: 14px 20px;
+  margin: 5px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.map
+{
+    left: 57%;
+    top: 20px;
+    position: absolute;
+}
+
+.menu
+{
+    background-color: #053434;
+    grid-area: nav;
+}
+
+.menu a
+{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 13px 26px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.menu a:hover
+{
+  background-color: #053434;
+  color: #5094a7;
+}
+
+.menu a.active {
+  background-color: #59b0e2;
+  color: white;
+}
+
+@media only screen and (max-width: 810px)  {
+      .menu { width: 50% }
+ }
+
+

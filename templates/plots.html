@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <link href="../static/style.css" rel="stylesheet" type="text/css">
+        <link rel='icon' type='image/ico' href='../static/favicon.ico'/>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+        <title>GNSS Planning</title>
+</head>
+<body>
+    <div class="container_plot">
+        <div class="menu">
+            <a href="{{ url_for("main") }}">Settings</a>
+            <a class="active" href="plots.html">Plots</a>
+            <a href="{{ url_for("sky_plot") }}">Sky Plot</a>
+            <a href="{{ url_for("map_view") }}">Map View</a>
+        </div>
+        <div class="info">
+        </div>
+        <div class="main">
+             <div class="chart" id="bargraph">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('bargraph',graphs,{});
+                </script>
+            </div>
+            <div class="chart2" id="elev">
+                <script>
+                    var graphs = {{elevPlot | safe}};
+                    Plotly.plot('elev',graphs,{});
+                </script>
+            </div>
+            <div class="chart3" id="dop">
+                <script>
+                    var graphs = {{dopPlot | safe}};
+                    Plotly.plot('dop',graphs,{});
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

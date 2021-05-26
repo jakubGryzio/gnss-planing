@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/style.css" rel="stylesheet" type="text/css">
+    <link rel='icon' type='image/ico' href='../static/favicon.ico'/>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <title>GNSS Planning</title>
+</head>
+<body>
+    <div class="container">
+            <div class="menu">
+                <a href="{{ url_for("main") }}">Settings</a>
+                <a href="{{ url_for("plots") }}">Plots</a>
+                <a href="{{ url_for("sky_plot") }}">Sky Plot</a>
+                <a class="active" href="worldView.html">Map View</a>
+            </div>
+            <div class="sat_info">
+            </div>
+            <div class="main">
+                <form action="{{ url_for("map_view") }}" method="post">
+                    <label for="time"><b> Start time:</b></label>
+                    <input type="time" id="time" name="time" value="{{ time }}"><br>
+                    <input type="submit" value="Apply">
+                </form>
+                <div class="mapView" id="mapView">
+                    <script>
+                        var graphs = {{map | safe}};
+                        Plotly.plot('mapView',graphs,{});
+                    </script>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
